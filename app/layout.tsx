@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Be_Vietnam_Pro, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ContactBubbles } from '@/components/ContactBubbles'
 import { PromoModal } from '@/components/PromoModal'
 import { getHomeContent } from '@/lib/google-sheet-content'
@@ -55,6 +56,7 @@ export default async function RootLayout({
         <ContactBubbles />
         <PromoModal consultationForm={homeContent.consultationForm} />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
