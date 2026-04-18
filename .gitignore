@@ -1,0 +1,17 @@
+# v0 runtime files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+
+# Source image folders
+hình_ảnh/
+cảm_nghĩ_của_sinh_viên/
+SIGE 2026.pdf
+
+# Common ignores
+node_modules/
+.next/
+.env*.local
+.DS_Store
+venv
+ASE VĂN BẰNG 2.pdf

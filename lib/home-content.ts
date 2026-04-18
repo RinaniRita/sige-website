@@ -1,0 +1,502 @@
+export interface HeroSlideContent {
+  id: number
+  badge: string
+  title: string
+  subtitle: string
+  description: string
+  features: string[]
+  buttonText: string
+  buttonLink: string
+  image: string
+}
+
+export interface HeaderContent {
+  nav: {
+    about: string
+    programs: string
+    activities: string
+    news: string
+    contact: string
+  }
+  topBar: {
+    hotlineLabel: string
+    hotlineNumber: string
+    tiktokLabel: string
+    facebookLabel: string
+    zaloLabel: string
+    tiktokUrl: string
+    facebookUrl: string
+    zaloUrl: string
+  }
+  links: {
+    activitiesUrl: string
+    newsUrl: string
+  }
+  ctaText: string
+  mobileCtaText: string
+}
+
+export interface ActivityItemContent {
+  title: string
+  description: string
+  image: string
+}
+
+export interface TestimonialItemContent {
+  name: string
+  program: string
+  quote: string
+  image: string | null
+  initials?: string
+}
+
+export interface FooterContent {
+  description: string
+  servicesTitle: string
+  services: string[]
+  linksTitle: string
+  links: {
+    about: string
+    programs: string
+    news: string
+    contact: string
+  }
+  contactTitle: string
+  address: string
+  hotlineLabel: string
+  hotlineNumber: string
+  email: string
+  website: string
+  copyright: string
+  privacyText: string
+  termsText: string
+}
+
+export interface ConsultationFormContent {
+  nameLabel: string
+  namePlaceholder: string
+  phoneLabel: string
+  phonePlaceholder: string
+  emailLabel: string
+  emailPlaceholder: string
+  educationLabel: string
+  educationPlaceholder: string
+  educationOptions: Array<{ value: string; label: string }>
+  majorLabel: string
+  majorPlaceholder: string
+  messageLabel: string
+  messagePlaceholder: string
+  submitText: string
+  submittingText: string
+  successMessage: string
+  errorMessage: string
+}
+
+export interface HomeContent {
+  header: HeaderContent
+  heroSlides: HeroSlideContent[]
+  sections: {
+    programs: {
+      badge: string
+      title: string
+      description: string
+    }
+    differentiators: {
+      badge: string
+      title: string
+      description: string
+      items: Array<{
+        title: string
+        lead: string
+        body: string
+      }>
+    }
+    services: {
+      badge: string
+      title: string
+      description: string
+      featured: {
+        title: string
+        description: string
+        ctaText: string
+      }
+      profileSupport: {
+        title: string
+        description: string
+      }
+      roadmap: {
+        title: string
+        description: string
+      }
+      network: {
+        title: string
+        description: string
+      }
+    }
+    activities: {
+      badge: string
+      title: string
+      description: string
+      linkUrl: string
+    }
+    testimonials: {
+      badge: string
+      title: string
+      description: string
+      featureTitle: string
+      featureCaption: string
+    }
+    process: {
+      badge: string
+      title: string
+      description: string
+      steps: string[]
+    }
+    trust: {
+      items: Array<{ value: string; label: string }>
+    }
+    partners: {
+      badge: string
+      title: string
+      description: string
+    }
+    news: {
+      badge: string
+      title: string
+      description: string
+      viewAllText: string
+      detailText: string
+    }
+    bottomCta: {
+      title: string
+      description: string
+      buttonText: string
+      buttonLink: string
+    }
+    contact: {
+      badge: string
+      title: string
+      description: string
+      highlights: Array<{
+        title: string
+        description: string
+      }>
+      privacyPrefix: string
+      privacyLinkText: string
+      privacyLinkHref: string
+    }
+  }
+  consultationForm: ConsultationFormContent
+  activityItems: ActivityItemContent[]
+  testimonials: TestimonialItemContent[]
+  footer: FooterContent
+}
+
+export const DEFAULT_HOME_CONTENT: HomeContent = {
+  header: {
+    nav: {
+      about: "Giới thiệu",
+      programs: "Chương trình",
+      activities: "Hoạt động",
+      news: "Tin tức & Sự kiện",
+      contact: "Liên hệ",
+    },
+    topBar: {
+      hotlineLabel: "Hotline:",
+      hotlineNumber: "093 849 1111",
+      tiktokLabel: "TikTok",
+      facebookLabel: "Facebook",
+      zaloLabel: "Zalo",
+      tiktokUrl: "https://www.tiktok.com/@vt.nguyenthidiep.sige",
+      facebookUrl: "https://www.facebook.com/VienKhoaHocGiaoDucToanCau",
+      zaloUrl: "https://zalo.me",
+    },
+    links: {
+      activitiesUrl: "https://sige.edu.vn/",
+      newsUrl: "https://sige.edu.vn/",
+    },
+    ctaText: "Đăng ký ngay",
+    mobileCtaText: "Đăng ký tư vấn miễn phí",
+  },
+  heroSlides: [
+    {
+      id: 1,
+      badge: "Hành trình tương lai bắt đầu từ đây",
+      title: "DU HỌC ĐÀI LOAN",
+      subtitle: "LÀM VIỆC NGAY TRONG QUÁ TRÌNH HỌC",
+      description: "Cùng Viện Khoa Học Giáo Dục Toàn Cầu SIGE kiến tạo tương lai vững chắc.",
+      features: [
+        "Nhận học bổng, hỗ trợ chi phí",
+        "Thực tập tại doanh nghiệp công nghệ",
+        "Lộ trình nghề nghiệp rõ ràng sau tốt nghiệp",
+      ],
+      buttonText: "Đăng ký tư vấn miễn phí",
+      buttonLink: "#lien-he",
+      image: "/Hero_section.png",
+    },
+    {
+      id: 2,
+      badge: "Đầu tư tiết kiệm, sinh lời tương lai",
+      title: "DU HỌC CHI PHÍ THẤP",
+      subtitle: "CƠ HỘI VIỆC LÀM CAO",
+      description: "Giải pháp tài chính tối ưu cho giấc mơ du học của bạn.",
+      features: [
+        "Chỉ từ 36 triệu ban đầu",
+        "Vừa học vừa làm – tích lũy thu nhập",
+        "Hỗ trợ xuyên suốt từ Việt Nam đến Đài Loan",
+      ],
+      buttonText: "Nhận thông tin ngay",
+      buttonLink: "#lien-he",
+      image: "/assets/students/graduation.jpg",
+    },
+    {
+      id: 3,
+      badge: "Hỗ trợ tận tâm",
+      title: "TƯ VẤN DU HỌC MIỄN PHÍ",
+      subtitle: "ĐỒNG HÀNH CÙNG BẠN",
+      description: "Đội ngũ chuyên gia SIGE luôn sẵn sàng giải đáp mọi thắc mắc.",
+      features: [
+        "Hotline 24/7: 093 849 1111",
+        "Hỗ trợ toàn diện qua Fanpage",
+        "Định hướng lộ trình cá nhân hóa",
+      ],
+      buttonText: "Liên hệ ngay",
+      buttonLink: "#lien-he",
+      image: "/assets/orientation/orientation-1.jpg",
+    },
+  ],
+  sections: {
+    programs: {
+      badge: "Chương trình du học",
+      title: "Khám phá các chương trình du học",
+      description: "Các chương trình du học đang tuyển sinh — hợp tác cùng các trường đại học uy tín",
+    },
+    differentiators: {
+      badge: "Tại sao chọn SIGE",
+      title: "Điều tạo nên sự khác biệt",
+      description: "Không chỉ là tư vấn — chúng tôi kiến tạo hệ sinh thái toàn diện để nâng bước giấc mơ du học của bạn",
+      items: [
+        {
+          title: "Đội ngũ chuyên môn cao",
+          lead: "Nhiều năm kinh nghiệm làm việc trực tiếp với các trường Đại học và Doanh nghiệp Đài Loan, luôn sẵn lòng định hướng đúng đắn cho từng sinh viên.",
+          body: "Đội ngũ tư vấn của SIGE bao gồm các chuyên gia đã từng du học và làm việc lâu năm tại Đài Loan, hiểu rõ môi trường học thuật và văn hóa địa phương. Chúng tôi không chỉ tư vấn mà còn đồng hành sát sao trong suốt hành trình học tập của bạn.",
+        },
+        {
+          title: "Học bổng độc quyền",
+          lead: "SIGE liên tục đàm phán để mang về những gói học bổng toàn phần hoặc bán phần độc quyền, tài trợ trực tiếp từ đối tác Đài Loan.",
+          body: "Với mạng lưới hơn 50 trường đại học đối tác, chúng tôi có khả năng đàm phán các suất học bổng đặc biệt mà bạn không thể tìm thấy ở bất kỳ đơn vị nào khác. Nhiều sinh viên SIGE đã nhận học bổng lên đến 100% học phí.",
+        },
+        {
+          title: "Hỗ trợ toàn diện",
+          lead: "Từ rèn luyện ngôn ngữ, định hướng văn hóa cho tới hỗ trợ trực tiếp khi bạn đã đặt chân sang Đài Loan học tập và đi làm thêm.",
+          body: "SIGE là đơn vị duy nhất có 3 văn phòng tại Đài Loan (Đài Bắc, Đào Viên, Cao Hùng) để hỗ trợ sinh viên ngay tại chỗ. Từ việc tìm chỗ ở, mở tài khoản ngân hàng, đến hỗ trợ xin việc làm thêm — chúng tôi luôn ở bên bạn.",
+        },
+      ],
+    },
+    services: {
+      badge: "Dịch vụ",
+      title: "SIGE đang hỗ trợ những chương trình gì",
+      description: "Chúng tôi cung cấp các dịch vụ toàn diện để hỗ trợ bạn thành công",
+      featured: {
+        title: "Thông tin học bổng",
+        description: "Cập nhật đầy đủ các chương trình học bổng từ chính phủ và các trường đại học hàng đầu Đài Loan. Hỗ trợ ứng tuyển và theo dõi kết quả.",
+        ctaText: "Tìm hiểu thêm",
+      },
+      profileSupport: {
+        title: "Hỗ trợ chuẩn bị hồ sơ",
+        description: "Hướng dẫn chi tiết cách chuẩn bị hồ sơ, viết motivation letter và các tài liệu cần thiết.",
+      },
+      roadmap: {
+        title: "Định hướng lộ trình",
+        description: "Tư vấn chọn ngành học, trường phù hợp với năng lực và nguyện vọng của bạn.",
+      },
+      network: {
+        title: "Kết nối mạng lưới",
+        description: "Liên kết trực tiếp với các trường đại học và tổ chức học bổng uy tín tại Đài Loan. Mở rộng cơ hội thông qua hệ thống đối tác rộng khắp.",
+      },
+    },
+    activities: {
+      badge: "Hoạt động",
+      title: "Các hoạt động tại SIGE",
+      description: "Thường xuyên tổ chức hội thảo tư vấn, đào tạo ngôn ngữ, định hướng hành trang trước khi sinh viên nhập học thực tế.",
+      linkUrl: "https://sige.edu.vn/",
+    },
+    testimonials: {
+      badge: "Cảm nghĩ",
+      title: "Cảm nghĩ của học viên",
+      description: "Những chia sẻ chân thực từ các bạn sinh viên đã đồng hành cùng SIGE",
+      featureTitle: "Sinh viên SIGE trong lễ tốt nghiệp",
+      featureCaption: "Niềm tự hào khi hoàn thành hành trình du học tại Đài Loan",
+    },
+    process: {
+      badge: "Lộ trình",
+      title: "Lộ trình du học Đài Loan tại SIGE",
+      description: "Đồng hành cùng bạn từ tư vấn ban đầu đến khi nhập học tại Đài Loan",
+      steps: [
+        "Tư vấn miễn phí chọn trường, ngành theo nguyện vọng",
+        "Đăng ký trung tâm SIGE",
+        "Học viên học ngôn ngữ (xếp lớp đào tạo cho học viên)",
+        "Học viên chuẩn bị hồ sơ và báo danh vào trường",
+        "SIGE xử lý và hoàn thiện hồ sơ (dịch thuật...)",
+        "Upload hồ sơ online học viên",
+        "Phỏng vấn theo yêu cầu của trường",
+        "SIGE chuẩn bị hồ sơ Visa khi nhận thư mời",
+        "Có Visa, bay sang Đài Loan, nhập cảnh, nhập học",
+        "SIGE tiếp tục đồng hành và hỗ trợ",
+      ],
+    },
+    trust: {
+      items: [
+        { value: "500+", label: "Sinh viên đã được hỗ trợ" },
+        { value: "50+", label: "Trường đại học đối tác" },
+        { value: "95%", label: "Tỷ lệ thành công" },
+        { value: "2", label: "Văn phòng tại Đài Loan" },
+      ],
+    },
+    partners: {
+      badge: "Đối tác",
+      title: "Trường đại học đối tác",
+      description: "Liên minh Minh Truyền và các trường đại học uy tín hợp tác cùng SIGE",
+    },
+    news: {
+      badge: "Cập nhật",
+      title: "Tin tức - Sự kiện",
+      description: "Những thông tin bổ ích và sự kiện nổi bật về du học Đài Loan",
+      viewAllText: "Xem toàn bộ",
+      detailText: "Chi tiết",
+    },
+    bottomCta: {
+      title: "Khởi tạo hành trình tương lai ngay hôm nay",
+      description: "Đăng ký qua SIGE để nhận tư vấn chuyên nghiệp, làm hồ sơ miễn phí, và không bỏ lỡ học bổng giá trị lên tới 100%.",
+      buttonText: "Đăng ký tư vấn miễn phí",
+      buttonLink: "#lien-he",
+    },
+    contact: {
+      badge: "Liên hệ",
+      title: "Đăng ký tư vấn nhanh",
+      description: "Để lại thông tin, chuyên viên SIGE sẽ liên hệ tư vấn miễn phí trong vòng 24h",
+      highlights: [
+        { title: "Tư vấn miễn phí", description: "Không phát sinh bất kỳ chi phí nào" },
+        { title: "Phản hồi trong 24h", description: "Chuyên viên liên hệ nhanh chóng" },
+        { title: "Lộ trình cá nhân hóa", description: "Tư vấn phù hợp với từng bạn" },
+      ],
+      privacyPrefix: "Bằng việc đăng ký, bạn đồng ý với",
+      privacyLinkText: "Chính sách bảo mật",
+      privacyLinkHref: "#",
+    },
+  },
+  consultationForm: {
+    nameLabel: "Họ và tên *",
+    namePlaceholder: "Nguyễn Văn A",
+    phoneLabel: "Số điện thoại *",
+    phonePlaceholder: "0912345678",
+    emailLabel: "Email *",
+    emailPlaceholder: "email@example.com",
+    educationLabel: "Trình độ học vấn hiện tại *",
+    educationPlaceholder: "Chọn trình độ học vấn...",
+    educationOptions: [
+      { value: "thpt", label: "Học sinh THPT" },
+      { value: "sv-nam-1", label: "Sinh viên năm 1" },
+      { value: "sv-nam-2", label: "Sinh viên năm 2" },
+      { value: "sv-nam-3", label: "Sinh viên năm 3" },
+      { value: "sv-nam-4", label: "Sinh viên năm 4" },
+      { value: "tot-nghiep-cd", label: "Đã tốt nghiệp Cao đẳng" },
+      { value: "tot-nghiep-dh", label: "Đã tốt nghiệp Đại học" },
+      { value: "di-lam", label: "Đã đi làm" },
+      { value: "khac", label: "Khác" },
+    ],
+    majorLabel: "Ngành học quan tâm",
+    majorPlaceholder: "Ví dụ: Kỹ thuật, Kinh tế, Y khoa...",
+    messageLabel: "Nội dung cần tư vấn",
+    messagePlaceholder: "Chia sẻ với chúng tôi về nguyện vọng và câu hỏi của bạn...",
+    submitText: "Gửi yêu cầu",
+    submittingText: "Đang gửi...",
+    successMessage: "Đăng ký thành công, SIGE sẽ liên hệ trong 24h.",
+    errorMessage: "Gửi thất bại, vui lòng thử lại hoặc gọi hotline.",
+  },
+  activityItems: [
+    {
+      title: "Lễ ký kết hợp tác",
+      description: "Những sự kiện đánh dấu cột mốc quan trọng giữa nhà trường, doanh nghiệp và học viên.",
+      image: "/assets/activity2.jpg",
+    },
+    {
+      title: "Đào tạo ngôn ngữ chuyên sâu",
+      description: "Chương trình rèn luyện tiếng Hoa trước khi nhập học tại Đài Loan.",
+      image: "/assets/training/classroom-3.jpg",
+    },
+    {
+      title: "Định hướng nghề nghiệp tại THPT",
+      description: "Chương trình tư vấn trực tiếp cho học sinh tại các trường phổ thông.",
+      image: "/assets/orientation/orientation-1.jpg",
+    },
+    {
+      title: "Gặp gỡ đối tác đại học",
+      description: "Kết nối trực tiếp với đại diện các trường đại học hàng đầu Đài Loan.",
+      image: "/assets/activity4.jpg",
+    },
+    {
+      title: "Trải nghiệm thực tế",
+      description: "Hoạt động giao lưu, trao đổi văn hóa và môi trường học tập quốc tế.",
+      image: "/assets/activity6.jpg",
+    },
+    {
+      title: "Hướng dẫn tuyển sinh",
+      description: "Tư vấn trực tiếp quy trình hồ sơ và tuyển sinh cho sinh viên.",
+      image: "/assets/training/recruitment-1.jpg",
+    },
+    {
+      title: "Workshop kỹ năng mềm",
+      description: "Trang bị kỹ năng sống, văn hóa và giao tiếp cho du học sinh.",
+      image: "/assets/training/classroom-5.jpg",
+    },
+    {
+      title: "Chuẩn bị hành trang du học",
+      description: "Buổi chia sẻ kinh nghiệm và định hướng văn hóa cho sinh viên trước khi lên đường.",
+      image: "/assets/orientation/orientation-2.jpg",
+    },
+  ],
+  testimonials: [
+    {
+      name: "Nguyễn Trần T.",
+      program: "Hệ Chuyên Ban, ĐH Kỹ Nam",
+      quote: "Sự hỗ trợ nhiệt tình từ cán bộ SIGE đã giúp mình vững tin hơn. Từ việc lo hồ sơ, tìm trường đến lúc bỡ ngỡ mới bước sang đất khách - mọi thứ dường như gần gũi hơn rất nhiều nhờ SIGE!",
+      image: "/assets/testimonial1.jpg",
+    },
+    {
+      name: "Lê Hoàng H.",
+      program: "Hệ Đại Học, ĐH Minh Truyền",
+      quote: "Chương trình học bổng năm đầu đã giúp gia đình mình giảm bớt gánh nặng tài chính. Môi trường đại học tại Đài Loan thực sự năng động và rất lý tưởng để phát triển bản thân.",
+      image: null,
+      initials: "H",
+    },
+    {
+      name: "Trần Vy N.",
+      program: "Hệ Thạc Sĩ, ĐH Khoa học Kỹ thuật",
+      quote: "Nhờ có SIGE định hướng, em đã chọn được ngành học phù hợp. Công việc thực tập đi làm thêm tại các tập đoàn đối tác cũng giúp em trang trải chi phí sinh hoạt một cách dễ dàng.",
+      image: null,
+      initials: "N",
+    },
+  ],
+  footer: {
+    description: "Viện Khoa Học Giáo Dục Toàn Cầu — Mạng lưới uy tín kết nối du học sinh Việt Nam tại Đài Loan.",
+    servicesTitle: "Dịch vụ",
+    services: ["Tư vấn du học", "Hỗ trợ học bổng", "Chuẩn bị hồ sơ", "Dịch vụ visa làm việc"],
+    linksTitle: "Liên kết",
+    links: {
+      about: "Về chúng tôi",
+      programs: "Chương trình du học",
+      news: "Tin tức - Sự kiện",
+      contact: "Liên hệ tư vấn",
+    },
+    contactTitle: "Liên hệ",
+    address: "Tầng 4, Tòa VINATA 2B, Số 289 Khuất Duy Tiến, P. Đại Mỗ, Hà Nội",
+    hotlineLabel: "Hotline:",
+    hotlineNumber: "093 849 1111",
+    email: "sigeedu@gmail.com",
+    website: "www.sige.edu.vn",
+    copyright: "© 2026 SIGE - Viện Khoa Học Giáo Dục Toàn Cầu. All rights reserved.",
+    privacyText: "Chính sách bảo mật",
+    termsText: "Điều khoản dịch vụ",
+  },
+}
